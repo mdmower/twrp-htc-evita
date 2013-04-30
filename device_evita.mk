@@ -9,23 +9,20 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/evita/overlay
 
 LOCAL_PATH := device/htc/evita
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernAl
+	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
-PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+    device/htc/evita/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     device/htc/evita/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
     device/htc/evita/recovery/sbin/detect_key:recovery/root/sbin/detect_key \
     device/htc/evita/recovery/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
     device/htc/evita/recovery/sbin/power_test:recovery/root/sbin/power_test \
-    device/htc/evita/recovery/sbin/am:recovery/root/sbin/am \
-    device/htc/evita/recovery/sbin/app_process:recovery/root/sbin/app_process \
-    device/htc/evita/recovery/sbin/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+    device/htc/evita/recovery/fstab.qcom:recovery/root/fstab.qcom
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_NAME := evita
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
