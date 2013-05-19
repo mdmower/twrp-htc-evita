@@ -46,14 +46,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 36
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-
-# Use this flag if the board has a ext4 partition larger than 2gb
-BOARD_HAS_LARGE_FILESYSTEM := true
-
-# Recovery
-BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-BOARD_USES_MMCUTILS := true
 
 # TWRP
 DEVICE_RESOLUTION := 720x1280
