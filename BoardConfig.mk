@@ -29,8 +29,8 @@ TARGET_PREBUILT_KERNEL := device/htc/evita/kernel
 
 # for jellybean branch of CM use BOARD_FORCE_RAMDISK_ADDRESS
 # for cm-10.1 branch of CM use BOARD_MKBOOTIMG_ARGS
-BOARD_FORCE_RAMDISK_ADDRESS := 0x81800000
-# BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
+# BOARD_FORCE_RAMDISK_ADDRESS := 0x81800000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 
 # Filesystem (cat /proc/emmc)
 TARGET_USERIMAGES_USE_EXT4 := true
