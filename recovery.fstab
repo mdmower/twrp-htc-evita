@@ -1,4 +1,4 @@
-# mount point   fstype      device                  [device2, parameters]
+# mount point   fstype      device                  [device2] [parameters]
 
 /boot           emmc        /dev/block/mmcblk0p21
 /cache          ext4        /dev/block/mmcblk0p34

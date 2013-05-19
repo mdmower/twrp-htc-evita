@@ -1,3 +1,9 @@
-TWRP - HTC One XL
-------------------------------------------
-This is a recovery-only device tree for the HTC One XL (htc evita) with modifications to allow compilation of Team Win Recovery Project (TWRP).
+**TWRP - HTC One XL**
+
+This is a recovery-only device tree for the HTC One XL (htc evita).
+
+**Quick build instructions:**
+
+    . build/envsetup.sh
+    lunch cm_evita-eng
+    mka recoveryimage
