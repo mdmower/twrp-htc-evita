@@ -16,20 +16,18 @@ TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := krait
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80400000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := device/htc/evita/kernel
-
-# for jellybean branch of CM use BOARD_FORCE_RAMDISK_ADDRESS
-# for cm-10.1 branch of CM use BOARD_MKBOOTIMG_ARGS
-# BOARD_FORCE_RAMDISK_ADDRESS := 0x81800000
+TARGET_KERNEL_CONFIG := elite_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 
 # Filesystem (cat /proc/emmc)
@@ -46,7 +44,10 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 36
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+
+# Charge mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
+TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 
 # TWRP
 DEVICE_RESOLUTION := 720x1280
@@ -56,3 +57,5 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_INCLUDE_DUMLOCK := true
 TW_INCLUDE_JB_CRYPTO := true
+TW_NO_SCREEN_BLANK := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"

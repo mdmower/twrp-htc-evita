@@ -15,7 +15,7 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_PATH)/recovery/lpm.rc:recovery/root/lpm.rc \
     $(LOCAL_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/recovery/choice_fn:recovery/root/sbin/choice_fn \
     $(LOCAL_PATH)/recovery/power_test:recovery/root/sbin/power_test \
