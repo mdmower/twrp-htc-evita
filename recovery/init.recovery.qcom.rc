@@ -1,3 +1,6 @@
+on init
+    symlink /internal_sd /sdcard
+
 on boot
     start choice_fn
 
