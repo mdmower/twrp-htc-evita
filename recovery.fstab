@@ -7,5 +7,5 @@
 /recovery       emmc        /dev/block/mmcblk0p22
 /system         ext4        /dev/block/mmcblk0p33
 /devlog         ext4        /dev/block/mmcblk0p26
-/internal_sd    vfat        /dev/block/mmcblk0p36   flags=display="Internal Storage";settingsstorage;wipeingui
-/usb-otg        vfat        /dev/block/sda1         /dev/block/sda  flags=display="USB-OTG";storage;wipeingui;removable
+/internal_sd    vfat        /dev/block/mmcblk0p36   flags=display="Internal Storage"
+/usb-otg        vfat        /dev/block/sda1         /dev/block/sda  flags=display="USB OTG";storage;wipeingui;removable
