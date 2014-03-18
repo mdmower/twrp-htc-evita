@@ -1,4 +1,7 @@
 on boot
+    write /sys/class/android_usb/android0/idVendor 0bb4
+    write /sys/class/android_usb/android0/idProduct 0ff9
+    write /sys/class/android_usb/android0/f_mass_storage/inquiry_string "HTC Phone                0000"
     start choice_fn
 
 service choice_fn /sbin/choice_fn
