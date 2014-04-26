@@ -12,9 +12,11 @@ on boot
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "ondemand"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "ondemand"
     # USB
-    write /sys/class/android_usb/android0/idVendor 0bb4
-    write /sys/class/android_usb/android0/idProduct 0ff9
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 0BB4
+    write /sys/class/android_usb/android0/idProduct 0FF9
     write /sys/class/android_usb/android0/f_mass_storage/inquiry_string "HTC Phone                0000"
+    write /sys/class/android_usb/android0/enable ${service.adb.root}
     # Services
     start choice_fn
 
