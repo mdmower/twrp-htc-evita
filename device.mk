@@ -14,6 +14,8 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/lpm.rc:recovery/root/lpm.rc \
     $(LOCAL_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
