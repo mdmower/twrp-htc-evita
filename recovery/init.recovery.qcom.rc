@@ -21,6 +21,7 @@ on boot
     setprop usb.product.mtpadb 0ca8
     # Services
     start choice_fn
+    start chargeled
 
 service choice_fn /sbin/choice_fn
     disabled
@@ -32,4 +33,7 @@ service offmode_charging /sbin/offmode_charging
     disabled
 
 service detect_key /sbin/detect_key
+    disabled
+
+service chargeled /sbin/chargeled
     disabled
