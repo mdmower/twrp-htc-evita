@@ -1,11 +1,11 @@
-# mount point   fstype      device  [device2]                                [parameters]
-/boot           emmc        /dev/block/platform/msm_sdcc.1/by-name/boot
-/cache          ext4        /dev/block/platform/msm_sdcc.1/by-name/cache
-/data           ext4        /dev/block/platform/msm_sdcc.1/by-name/userdata  flags=encryptable=/dev/block/platform/msm_sdcc.1/by-name/extra
-/devlog         ext4        /dev/block/platform/msm_sdcc.1/by-name/devlog
-/misc           emmc        /dev/block/platform/msm_sdcc.1/by-name/misc
-/recovery       emmc        /dev/block/platform/msm_sdcc.1/by-name/recovery
-/system         ext4        /dev/block/platform/msm_sdcc.1/by-name/system
-# storage volumes
-/sdcard         vfat        /dev/block/mmcblk0p36                            flags=display="Internal Storage";settingsstorage
-/usb-otg        vfat        /dev/block/sda1  /dev/block/sda                  flags=display="USB OTG";storage;wipeingui;removable
+# device                                           mount_point     fstype  mount_flags                             fs_flags    twrp_flags
+/dev/block/platform/msm_sdcc.1/by-name/boot        /boot           emmc    defaults                                defaults
+/dev/block/platform/msm_sdcc.1/by-name/cache       /cache          ext4    noatime,nosuid,nodev                    defaults
+/dev/block/platform/msm_sdcc.1/by-name/userdata    /data           ext4    noatime,nosuid,nodev,noauto_da_alloc    defaults    twrp=encryptable=/dev/block/platform/msm_sdcc.1/by-name/extra
+/dev/block/platform/msm_sdcc.1/by-name/devlog      /devlog         ext4    noatime,nosuid,nodev                    defaults    twrp=display="Devlog"
+/dev/block/platform/msm_sdcc.1/by-name/misc        /misc           emmc    defaults                                defaults
+/dev/block/platform/msm_sdcc.1/by-name/recovery    /recovery       emmc    defaults                                defaults
+/dev/block/platform/msm_sdcc.1/by-name/system      /system         ext4    noatime                                 defaults
+
+/dev/block/platform/msm_sdcc.1/by-name/fat         /sdcard         vfat    defaults                                defaults    twrp=display="Internal Storage";settingsstorage
+/dev/block/sda1                                    /usb-otg        vfat    defaults                                defaults    twrp=display="USB OTG";storage;wipeingui;removable
