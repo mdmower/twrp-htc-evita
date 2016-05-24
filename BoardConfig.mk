@@ -1,4 +1,4 @@
-# Copyright (C) 2015 Matthew D. Mower
+# Copyright (C) 2016 Matthew D. Mower
 # Copyright (C) 2015 The CyanogenMod Project
 # Copyright (C) 2013 The Android Open Source Project
 #
@@ -47,12 +47,14 @@ TARGET_KERNEL_SOURCE := kernel/htc/msm8960
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# Flags
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+
 # Graphics
 USE_OPENGL_RENDERER := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-BOARD_EGL_CFG := device/htc/evita/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Power
