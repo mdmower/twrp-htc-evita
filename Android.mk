@@ -1,3 +1,4 @@
+# Copyright (C) 2016 Matthew D. Mower
 # Copyright (C) 2013 The CyanogenMod Project
 # Copyright (C) 2012 The Android Open-Source Project
 #
@@ -17,7 +18,7 @@ ifeq ($(RECOVERY_VARIANT), twrp)
 ifeq ($(TARGET_DEVICE), evita)
 
 LOCAL_PATH := $(call my-dir)
-include $(call first-makefiles-under, $(LOCAL_PATH))
+include $(call all-makefiles-under, $(LOCAL_PATH))
 
 endif
 endif
