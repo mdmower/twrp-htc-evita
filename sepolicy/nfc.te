@@ -1,1 +1,0 @@
-allow nfc shell_data_file:dir search;

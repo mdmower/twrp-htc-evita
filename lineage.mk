@@ -16,11 +16,11 @@
 
 $(call inherit-product, device/htc/evita/full_evita.mk)
 
-# Inherit CM full phone configuration
+# Inherit LineageOS full phone configuration
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Device naming
-PRODUCT_NAME := cm_evita
+PRODUCT_NAME := lineage_evita
 
 # Override build props
 PRODUCT_BUILD_PROP_OVERRIDES += \

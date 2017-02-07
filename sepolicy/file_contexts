@@ -1,4 +1,3 @@
-
 # Bluetooth
 /dev/rfkill                                     u:object_r:bluetooth_device:s0
 
@@ -11,8 +10,14 @@
 # CMHW
 /sys/devices/virtual/timed_output/vibrator/voltage_level    u:object_r:vibeamp_sysfs:s0
 
+# Encryption
+/dev/block/platform/msm_sdcc\.1/by-name/extra   u:object_r:metadata_block_device:s0
+
 # Graphics
-/dev/kgsl-2d.*                                  u:object_r:gpu_device:s0
+/dev/kgsl-2d.*                                               u:object_r:gpu_device:s0
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/gpuclk       u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/max_gpuclk   u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/reset_count  u:object_r:sysfs_thermal:s0
 
 # Lights
 /sys/devices/i2c-12/12-0033/leds/flashlight/function_switch             u:object_r:lights_sysfs:s0
